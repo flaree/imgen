@@ -76,8 +76,8 @@ def request_key():
     user = session['user']
 
     # Remove this line when new applications are permitted again OR you are selfhosting this instance
-    return render_template('result.html', result='❌ New applications have been closed for the time being. '
-                                                 'We apologize for the inconvenience.', success=True)
+    #return render_template('result.html', result='❌ New applications have been closed for the time being. '
+           #                                      'We apologize for the inconvenience.', success=True)
 
     if request.method == 'GET':
         return render_template('request.html')
