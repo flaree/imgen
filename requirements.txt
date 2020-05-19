@@ -12,4 +12,3 @@ numpy
 keras
 scipy
 gevent
-tensorflow

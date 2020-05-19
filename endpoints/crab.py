@@ -1,6 +1,6 @@
 import uuid
 import os
-from flask import send_file, after_this_request
+from flask import jsonify, send_file, after_this_request
 
 from utils.endpoint import Endpoint, setup
 from utils.exceptions import BadRequest
@@ -15,9 +15,9 @@ class Crab(Endpoint):
     Malformed requests count against your ratelimit for this endpoint.
     Separate text with a comma.
     """
-    params = ['text']
 
     def generate(self, avatars, text, usernames, kwargs):
+        raise BadRequest("Crab endpoint is disabled on flare's imgen instance. Use trustys crab rave cog or host your own imgen.")
         name = uuid.uuid4().hex + '.mp4'
 
         @after_this_request

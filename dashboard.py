@@ -94,8 +94,8 @@ def request_key():
         if not reason or not name or not link or not app_type or not description or not tos:
             result = 'Please make sure you have entered a name, description, type, link, description and have accepted our TOS before submitting your application'
             return render_template('result.html', result=result, success=False)
-        if not link.startswith('http'):
-            return render_template('result.html', result='URL must use HTTP(S) scheme!', success=False)
+#        if not link.startswith('http'):
+#            return render_template('result.html', result='URL must use HTTP(S) scheme!', success=False)
 
         r.table('applications').insert({
             "owner": user['id'],
